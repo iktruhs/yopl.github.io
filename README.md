@@ -2,186 +2,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YP</title>
-  <!-- Google Fonts: Avant Garde Alternative (Futura/League Spartan) -->
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>iktruhs — portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'League Spartan', sans-serif;
     }
 
     body {
-      background: #f5f5f5;
-      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0a0a0a;
+      color: #f2f2f2;
       line-height: 1.6;
     }
 
     header {
-      background: #111;
-      color: #fff;
-      padding: 20px 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 20px;
     }
 
     header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
+      font-size: clamp(3rem, 8vw, 6rem);
+      letter-spacing: 4px;
     }
 
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffcc00;
+    header p {
+      margin-top: 15px;
+      opacity: 0.7;
     }
 
     section {
-      padding: 80px 20px;
-      text-align: center;
+      padding: 80px 10%;
     }
 
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
     }
 
-    section p {
+    .about {
       max-width: 700px;
-      margin: 0 auto 20px;
-      font-size: 1.1rem;
+      opacity: 0.85;
     }
 
-    .services, .portfolio {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
     .card {
-      background: #fff;
+      border: 1px solid #222;
       padding: 20px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: 0.3s;
     }
 
     .card:hover {
+      border-color: #fff;
       transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
     }
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      opacity: 0.7;
+      font-size: 0.95rem;
     }
 
     footer {
-      background: #111;
-      color: #fff;
-      padding: 40px 20px;
+      padding: 40px 10%;
       text-align: center;
+      border-top: 1px solid #222;
+      opacity: 0.6;
     }
 
-    footer a {
-      color: #ffcc00;
-      margin: 0 10px;
+    a {
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      border-bottom: 1px solid #fff;
     }
 
-    @media(max-width: 768px) {
-      .services, .portfolio {
-        flex-direction: column;
-        align-items: center;
-      }
+    a:hover {
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO -->
   <header>
-    <h1>YP</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div>
+      <h1>iktruhs</h1>
+      <p>art • clothing • sound</p>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>About YP</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula eros nec justo bibendum, sed tristique libero elementum.</p>
+  <!-- ABOUT -->
+  <section>
+    <h2>ABOUT</h2>
+    <p class="about">
+      iktruhs is a personal project focused on visual art, clothing concepts,
+      experimental sound, and raw ideas. This portfolio is a collection of
+      selected work and ongoing projects.
+    </p>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
+  <!-- WORK -->
+  <section>
+    <h2>SELECTED WORK</h2>
+    <div class="grid">
       <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Service 1">
-        <h3>Service One</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ligula id urna ultricies.</p>
+        <h3>Clothing Concept 001</h3>
+        <p>Street-oriented design experiment focused on identity and texture.</p>
       </div>
+
       <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Service 2">
-        <h3>Service Two</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ligula id urna ultricies.</p>
+        <h3>Sound Project</h3>
+        <p>Experimental noise / horror-inspired sound design.</p>
       </div>
+
       <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Service 3">
-        <h3>Service Three</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ligula id urna ultricies.</p>
+        <h3>Visual Art</h3>
+        <p>Mixed media visuals exploring distortion and discomfort.</p>
       </div>
     </div>
   </section>
 
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio">
-      <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Project 1">
-        <h3>Project One</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Project 2">
-        <h3>Project Two</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/250x150" alt="Project 3">
-        <h3>Project Three</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:Iktruhs@gmail.com">Iktruhs@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/Iktruhs" target="_blank">@Iktruhs</a></p>
-    <p>Twitter: <a href="https://twitter.com/Kincaidnb" target="_blank">@Kincaidnb</a></p>
+  <!-- CONTACT -->
+  <section>
+    <h2>CONTACT</h2>
+    <p>
+      Instagram: <a href="https://instagram.com/">@iktruhs</a><br />
+      Email: <a href="mailto:hello@iktruhs.com">hello@iktruhs.com</a>
+    </p>
   </section>
 
   <footer>
-    <p>&copy; 2026 YP. All rights reserved.</p>
+    © 2026 iktruhs
   </footer>
 
 </body>
