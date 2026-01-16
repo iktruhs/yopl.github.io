@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>iktruhs — portfolio</title>
+  <title>iktruhs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -103,7 +103,7 @@
   <header>
     <div>
       <h1>iktruhs</h1>
-      <p>art • clothing • sound</p>
+      <p>do you have yellow eyes?</p>
     </div>
   </header>
 
@@ -111,9 +111,7 @@
   <section>
     <h2>ABOUT</h2>
     <p class="about">
-      iktruhs is a personal project focused on visual art, clothing concepts,
-      experimental sound, and raw ideas. This portfolio is a collection of
-      selected work and ongoing projects.
+     Only One Nation.
     </p>
   </section>
 
@@ -143,7 +141,7 @@
     <h2>CONTACT</h2>
     <p>
       Instagram: <a href="https://instagram.com/">@iktruhs</a><br />
-      Email: <a href="mailto:iktruhs@gmail.com">hello@iktruhs.com</a>
+      Email: <a href="mailto:iktruhs@gmail.com">iktruhs@gmail.com</a>
     </p>
   </section>
 
