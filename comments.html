@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iktruhs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon: 10-pointed star -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <polygon points="50,2 57,30 85,30 60,50 70,78 50,60 30,78 40,50 15,30 43,30"
+             fill="white" stroke="black" stroke-width="2"/>
+  </svg>'>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Avante+Garde:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Avante Garde', sans-serif;
+      font-weight: 700;
+      background: #0a0a0a;
+      color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 { margin-bottom: 20px; }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      font-family: inherit;
+      font-weight: 700;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input, textarea {
+      resize: none;
+    }
+
+    button {
+      background: #f2f2f2;
+      color: #0a0a0a;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>iktruhs — Leave a Comment</h1>
+
+  <!-- Comment Form -->
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Comment" required></textarea>
+    <!-- Optional: prevent spam -->
+    <input type="hidden" name="_captcha" value="false">
+    <button type="submit">Send Comment</button>
+  </form>
+
+</body>
+</html>
