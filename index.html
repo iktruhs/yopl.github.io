@@ -28,6 +28,9 @@
       min-height: 100vh;
       padding-top: 140px;
       overflow-x: hidden;
+
+      display: flex;
+      flex-direction: column;
     }
 
     /* Fixed top logo */
@@ -54,6 +57,7 @@
 
     /* Page wrapper */
     #page {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -90,15 +94,12 @@
     }
 
     .contact a {
-      display: block;        /* <-- THIS FIXES IT */
+      display: block;
       margin: 6px 0;
     }
 
     footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      padding: 10px 0;
+      padding: 20px 0;
       background: #0a0a0a;
       opacity: 0.7;
       font-size: 0.85rem;
@@ -132,6 +133,9 @@
     </div>
   </div>
 
+  <footer>
+    © 2026 Yodskini Productions. All rights reserved.
+  </footer>
 
   <script>
     function resetPage() {
@@ -141,11 +145,6 @@
     }
   </script>
 
-  <footer>
-    © 2026 Yodskini Productions. All rights reserved.
-  </footer>
-
 </body>
 </html>
-
 
