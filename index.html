@@ -2,188 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>yp</title>
+  <title>iktruhs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 10-point star favicon -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-      <polygon points='50,2 57,30 85,30 60,50 70,78 50,60 30,78 40,50 15,30 43,30'
-      fill='white' stroke='black' stroke-width='2'/>
-    </svg>">
+  <!-- Favicon: 10-pointed star -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <polygon points="50,2 57,30 85,30 60,50 70,78 50,60 30,78 40,50 15,30 43,30"
+             fill="white" stroke="black" stroke-width="2"/>
+  </svg>'>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Avante+Garde:wght@700&display=swap" rel="stylesheet">
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: Verdana, Geneva, sans-serif;
+      font-family: 'Avante Garde', sans-serif;
       font-weight: 700;
       background: #0a0a0a;
       color: #f2f2f2;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       min-height: 100vh;
-      padding-top: 140px;
-      overflow-x: hidden;
+      padding: 20px;
+      text-align: center;
     }
 
-    /* Fixed top logo */
-    .fixed-logo {
-      position: fixed;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2000;
+    /* Header */
+    h1 {
+      margin-bottom: 10px;
       cursor: pointer;
-    }
-
-    .fixed-logo img {
-      max-width: 400px;
-      width: 100%;
-      opacity: 0.95;
       transition: transform 0.25s ease, opacity 0.25s ease;
     }
 
-    .fixed-logo img:hover {
+    h1:hover {
       transform: scale(1.04);
       opacity: 1;
     }
 
-    /* Page wrapper */
-    #page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      transition: transform 0.6s ease, opacity 0.6s ease;
-    }
-
-    body.closing #page {
-      transform: scale(0.78);
-      opacity: 0;
-    }
-
-    a {
-      color: #f2f2f2;
-      font-weight: bold;
-    }
-
-    a:hover {
-      color: #ffcc00;
-    }
-
-    .contact {
-      margin-top: 120px;
-      padding-bottom: 120px;
+    /* Sub text under header */
+    .back-text {
+      margin-top: 0;
+      font-size: 0.95rem;
       opacity: 0.75;
     }
 
-    /* MUSIC PLAYER */
-    .music-controls {
-      position: fixed;
-      bottom: 60px;
-      right: 20px;
+    form {
       display: flex;
+      flex-direction: column;
       gap: 10px;
-      z-index: 3000;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
     }
 
-    .music-controls button {
-      background: none;
-      border: 1px solid #f2f2f2;
-      color: #f2f2f2;
-      padding: 8px 12px;
-      font-weight: bold;
-      cursor: pointer;
+    input, textarea, button {
+      padding: 10px;
+      font-family: inherit;
+      font-weight: 700;
+      border: none;
+      border-radius: 5px;
     }
 
-    .music-controls button:hover {
+    input, textarea {
+      resize: none;
+    }
+
+    button {
       background: #f2f2f2;
       color: #0a0a0a;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      padding: 10px 0;
-      background: #0a0a0a;
-      opacity: 0.7;
-      font-size: 0.85rem;
+    button:hover {
+      background: #e0e0e0;
+    }
+
+    /* confirmation message */
+    .confirm {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px solid #f2f2f2;
+      border-radius: 8px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- LOGO -->
-  <div class="fixed-logo" onclick="resetPage()">
-    <img src="https://i.imgur.com/ZzvBYMX.png" alt="iktruhs logo">
+  <!-- Clickable Header -->
+  <h1 onclick="goBack()">iktruhs — Leave a Comment</h1>
+  <p class="back-text">Dont wanna say shit? Click the header asshole.</p>
+
+  <!-- Comment Form -->
+  <form action="https://formsubmit.co/iktruhs@gmail.com" method="POST" onsubmit="showConfirm()">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Comment" required></textarea>
+
+    <!-- Redirect back to main site -->
+    <input type="hidden" name="_next" value="https://iktruhs.github.io/#comment-sent">
+
+    <!-- Disable captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Send Comment</button>
+  </form>
+
+  <!-- Confirmation -->
+  <div class="confirm" id="confirm">
+    Comment sent! Redirecting back...
   </div>
 
-  <!-- AUDIO -->
-  <audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <!-- MUSIC CONTROLS -->
-  <div class="music-controls">
-    <button onclick="togglePlay(this)">PLAY</button>
-    <button onclick="toggleMute(this)">MUTE</button>
-  </div>
-
-  <!-- PAGE CONTENT -->
-  <div id="page">
-    <h1>yodskini productions — it works</h1>
-    <h1>Fuck You Timothee Chalamet.</h1>
-    <h1>I Hope You Have A Very Bad Day.</h1>
-    <h1>website still under construction</h1>
-
-    <div style="height:1200px"></div>
-
-    <a href="comments.html">Leave a Comment</a>
-
-    <div class="contact">
-      <h2>contact</h2>
-      <a href="mailto:iktruhs@gmail.com">iktruhs@gmail.com</a>
-      <a href="https://instagram.com/iktruhs" target="_blank">instagram @iktruhs</a>
-      <a href="https://twitter.com/kincaidnb" target="_blank">twitter @kincaidnb</a>
-    </div>
-  </div>
-
-  <footer>
-    © 2026 Yodskini Productions. All rights reserved.
-  </footer>
-
-  <!-- JS -->
   <script>
-    const music = document.getElementById("music");
-
-    function togglePlay(btn) {
-      if (music.paused) {
-        music.play();
-        btn.textContent = "PAUSE";
-      } else {
-        music.pause();
-        btn.textContent = "PLAY";
-      }
-    }
-
-    function toggleMute(btn) {
-      music.muted = !music.muted;
-      btn.textContent = music.muted ? "UNMUTE" : "MUTE";
-    }
-
-    function resetPage() {
+    function goBack() {
       document.body.classList.add("closing");
-      setTimeout(() => window.scrollTo(0, 0), 300);
-      setTimeout(() => document.body.classList.remove("closing"), 600);
+
+      setTimeout(() => {
+        window.location.href = "https://iktruhs.github.io/";
+      }, 300);
+
+      setTimeout(() => {
+        document.body.classList.remove("closing");
+      }, 600);
+    }
+
+    function showConfirm() {
+      document.getElementById("confirm").style.display = "block";
     }
   </script>
+
+  <footer style="margin-top: 40px; margin-bottom: 30px; opacity: 0.7; font-size: 0.9rem;">
+  © 2026 iktruhs. All rights reserved.
+</footer>
+
 
 </body>
 </html>
