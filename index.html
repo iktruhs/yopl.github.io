@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>yayod</title>
+  <title>iktruhs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- 10-point star favicon -->
@@ -25,18 +25,29 @@
       overflow-x: hidden;
     }
 
+    /* Thin top bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 32px; /* thin */
+      background: #000;
+      z-index: 1000;
+    }
+
     /* Fixed top logo container */
     .fixed-logo {
       position: fixed;
       top: -40px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 2000;
+      z-index: 2000; /* above bar */
       cursor: pointer;
     }
 
     .fixed-logo img {
-      max-width: 350px;
+      max-width: 400px;
       width: 100%;
       height: auto;
       opacity: 0.95;
@@ -103,6 +114,9 @@
 
 <body id="top">
 
+  <!-- Black top bar -->
+  <div class="top-bar"></div>
+
   <!-- Clickable fixed logo -->
   <div class="fixed-logo" onclick="resetPage()">
     <img src="https://i.imgur.com/ZzvBYMX.png" alt="iktruhs logo">
@@ -119,7 +133,7 @@
 
     <a href="comments.html">Leave a Comment</a>
 
-    <!-- Contact section -->
+    <!-- Contact -->
     <div class="contact">
       <h2>contact</h2>
       <a href="mailto:iktruhs@gmail.com">iktruhs@gmail.com</a>
@@ -144,4 +158,3 @@
 
 </body>
 </html>
-
