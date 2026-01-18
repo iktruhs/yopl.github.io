@@ -2,62 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Newport Boyz</title>
+  <title>Newport Image</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       display: flex;
-      flex-direction: column; /* Stack image above text */
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-color: #0a0a0a;
-      font-family: 'Verdana', Geneva, sans-serif;
-      overflow-x: hidden;
+      background-color: #0a0a0a; /* Matches your dark theme */
+      overflow: hidden;
     }
 
-    .image-container {
-      width: 100%;
-      max-width: 500px; /* Limits width so it doesn't get too huge */
-      margin-bottom: 20px;
+    .image-wrapper {
+      width: 90%;
+      max-width: 800px; /* Limits the size on large screens */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .image-container img {
+    .image-wrapper img {
       width: 100%;
       height: auto;
+      /* Prevents stretching and maintains proportions */
+      object-fit: contain;
       display: block;
-      /* "Unstretches" the image by maintaining aspect ratio */
-      object-fit: contain; 
-    }
-
-    h1 {
-      color: #f2f2f2;
-      font-size: 80px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      margin: 0;
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 40px;
-      }
-      .image-container {
-        max-width: 80%;
-      }
     }
   </style>
 </head>
 <body>
 
-  <div class="image-container">
-    <img src="https://i.imgur.com/JdDwVSN.png" alt="Newport Image">
+  <div class="image-wrapper">
+    <img src="https://i.imgur.com/BGBCbK8.png" alt="Featured Image">
   </div>
-
-  <h1>Newport Boyz</h1>
 
 </body>
 </html>
