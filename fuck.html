@@ -13,9 +13,7 @@
     </svg>">
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -29,6 +27,21 @@
       overflow-x: hidden;
       display: flex;
       flex-direction: column;
+    }
+
+    /* CLOCK */
+    .clock {
+      position: fixed;
+      top: 14px;
+      right: 16px;
+      font-size: 12px;
+      color: #bdbdbd;
+      letter-spacing: 0.6px;
+      line-height: 1.3;
+      text-align: right;
+      user-select: none;
+      z-index: 3000;
+      opacity: 0.85;
     }
 
     .fixed-logo {
@@ -88,19 +101,8 @@
       z-index: 10;
     }
 
-    /* Left Palm Positioning */
-    .left-palm {
-      top: 40%;
-      left: 21%;
-      width: 18%;
-    }
-
-    /* Right Palm Positioning */
-    .right-palm {
-      top: 32%;
-      right: 21%;
-      width: 14%;
-    }
+    .left-palm { top: 40%; left: 21%; width: 18%; }
+    .right-palm { top: 32%; right: 21%; width: 14%; }
 
     .palm-link img {
       width: 100%;
@@ -146,22 +148,25 @@
 
 <body>
 
+  <!-- CLOCK -->
+  <div class="clock" id="clock"></div>
+
   <div class="fixed-logo" onclick="resetPage()">
     <img src="https://i.imgur.com/ZzvBYMX.png" alt="iktruhs logo">
   </div>
 
   <div id="page">
     <h1>yodskini productions — it works</h1>
-    
+
     <div class="choice-section">
       <img src="https://i.imgur.com/RBaOvBU_d.png?maxwidth=520&shape=thumb&fidelity=high" class="background-main" alt="background">
-      
+
       <a href="nb.html" class="palm-link left-palm">
-        <img src="https://i.imgur.com/yZEwOFG_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Choice 1">
+        <img src="https://i.imgur.com/yZEwOFG_d.png?maxwidth=520&shape=thumb&fidelity=high">
       </a>
 
       <a href="irs.html" class="palm-link right-palm">
-        <img src="https://i.imgur.com/0Rkj7LJ_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Choice 2">
+        <img src="https://i.imgur.com/0Rkj7LJ_d.png?maxwidth=520&shape=thumb&fidelity=high">
       </a>
     </div>
 
@@ -169,11 +174,9 @@
     <h1>I Hope You Have A Very Bad Day.</h1>
     <p>website still under construction</p>
 
-    <div style="height:100px;"></div>
-
     <a href="comments.html">Leave a Comment</a>
     <a href="hatelist.html">Hate List</a>
-    
+
     <div class="contact">
       <h2>contact</h2>
       <a href="mailto:iktruhs@gmail.com">iktruhs@gmail.com</a>
@@ -182,9 +185,7 @@
     </div>
   </div>
 
-  <footer>
-    © 2026 Yodskini Productions. All rights reserved.
-  </footer>
+  <footer>© 2026 Yodskini Productions. All rights reserved.</footer>
 
   <script>
     function resetPage() {
@@ -192,6 +193,31 @@
       setTimeout(() => window.scrollTo(0, 0), 300);
       setTimeout(() => document.body.classList.remove("closing"), 600);
     }
+
+    // REALTIME CLOCK
+    const clock = document.getElementById("clock");
+
+    function updateClock() {
+      const now = new Date();
+
+      const date = now.toLocaleDateString("en-US", {
+        month: "2-digit",
+        day: "2-digit",
+        year: "numeric"
+      });
+
+      const time = now.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+      });
+
+      clock.innerHTML = `${date}<br>${time}`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
   </script>
 
 </body>
