@@ -15,7 +15,6 @@
     min-height: 100vh;
   }
 
-  /* VHS FRAME */
   .vhs-frame {
     padding: 28px;
     background: #000;
@@ -23,7 +22,6 @@
     justify-content: center;
   }
 
-  /* CRT SCREEN */
   .vhs-screen {
     position: relative;
     width: 90vw;
@@ -41,13 +39,6 @@
 
     animation: flicker 0.15s infinite;
     filter: blur(0.18px) contrast(1.05) saturate(1.1);
-  }
-
-  /* VIDEO ITSELF */
-  .vhs-screen video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   /* VIGNETTE */
@@ -87,6 +78,12 @@
     50% { opacity: 1; }
     100% { opacity: 0.97; }
   }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
 </style>
 
 </head>
@@ -94,14 +91,7 @@
 
 <div class="vhs-frame">
   <div class="vhs-screen">
-    <video
-      src="https://i.imgur.com/zhhAAN8.mp4"
-      autoplay
-      loop
-      muted
-      playsinline
-      controls
-    ></video>
+    <iframe src="https://imgur.com/zhhAAN8/embed?pub=true" allowfullscreen></iframe>
   </div>
 </div>
 
